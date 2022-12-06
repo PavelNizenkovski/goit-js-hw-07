@@ -6,7 +6,7 @@ console.log(galleryItems);
 const paletteContainer = document.querySelector(".gallery");
 const cardsMarkap = createImegeCards(galleryItems);
 paletteContainer.insertAdjacentHTML(`beforeend`, cardsMarkap);
-paletteContainer.addEventListener(`click`, onPaletteContainer);
+
 
 console.log(createImegeCards(galleryItems));
 function createImegeCards(galleryItems) {
@@ -19,15 +19,12 @@ function createImegeCards(galleryItems) {
     .join("");
 }
 
-function onPaletteContainer(evt) {
-  evt.preventDefault();
-  if (evt.target.nodeName !== "IMG") {
-    return;
-  }
+
   const lightbox = new SimpleLightbox(".gallery a", {
     captionType: "alt",
     captionsData: "alt",
     captionPosition: "bottom",
     captionDelay: "250",
   });
-}
+
+сonsole.log(lightbox);
